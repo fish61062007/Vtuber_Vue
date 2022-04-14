@@ -57,7 +57,7 @@ export default new Vuex.Store({
          sessionStorage.clear();
       },
       setAvatar(state, value) {
-         state.avatar = value
+         state.avatar = "http://34.215.246.135:8080/home/ubuntu/static/upload/" + value
       },
       setUsername(state, value) {
          state.username = value

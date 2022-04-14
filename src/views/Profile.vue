@@ -70,7 +70,6 @@
 
 <script>
 import { mapState } from "vuex";
-// import http from "../assets/js/http-common.js";
 import http from "../assets/js/http-common.js";
 export default {
    async beforeMount() {
@@ -114,7 +113,6 @@ export default {
                console.log(data);
                if (data.state == 2000) {
                   this.disabled = true;
-                  // this.change();
                } else {
                   const message = data.message;
                   if (message.includes("手機")) {
