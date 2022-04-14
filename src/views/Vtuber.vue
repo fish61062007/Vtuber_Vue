@@ -55,8 +55,8 @@
       <div>
          <v-tabs dark centered fixed-tabs color="#E91E63">
             <v-tab dark v-for="(item, i) in items" :key="i" :to="item.to">
-               {{ item.text }}
                <v-icon>{{ item.icon }}</v-icon>
+               {{ item.text }}
             </v-tab>
          </v-tabs>
       </div>
