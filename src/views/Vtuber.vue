@@ -53,7 +53,8 @@
          </v-list-item>
       </v-container>
       <div>
-         <v-tabs dark centered fixed-tabs color="#E91E63">
+         <v-tabs dark centered fixed-tabs>
+            <v-tabs-slider color="#E91E63"></v-tabs-slider>
             <v-tab dark v-for="(item, i) in items" :key="i" :to="item.to">
                <v-icon>{{ item.icon }}</v-icon>
                <label>{{ item.text }}</label>

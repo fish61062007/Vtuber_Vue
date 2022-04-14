@@ -102,13 +102,8 @@
             </div>
          </div>
          <div>
-            <v-tabs
-               dark
-               centered
-               fixed-tabs
-               background-color="#1e1e1e"
-               color="primary"
-            >
+            <v-tabs dark centered fixed-tabs background-color="#1e1e1e">
+               <v-tabs-slider color="primary"></v-tabs-slider>
                <v-tab dark v-for="(item, i) in items" :key="i" :to="item.to">
                   <v-icon>{{ item.icon }}</v-icon>
                   <label>{{ item.text }}</label>
