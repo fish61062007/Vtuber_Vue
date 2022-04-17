@@ -20,9 +20,8 @@
                            :rules="[rules.required, rules.username]"
                            :error-messages="errorMessageForm.username"
                            @input="errorMessageForm.username = ''"
-                           @keyup.tab.prevent="
-                              $refs.password.$refs.input.click()
-                           "
+                           @keydown.tab.prevent=""
+                           @keyup.tab="$refs.password.$refs.input.click()"
                         >
                            <template v-slot:append-outer>
                               <v-tooltip bottom>
@@ -51,7 +50,8 @@
                            @click:append="passwordVisible = !passwordVisible"
                            :error-messages="errorMessageForm.password"
                            @change="errorMessageForm.password = ''"
-                           @keyup.tab.prevent="$refs.phone.$refs.input.click()"
+                           @keydown.tab.prevent=""
+                           @keyup.tab="$refs.phone.$refs.input.click()"
                         >
                            <template v-slot:append-outer>
                               <v-tooltip bottom>
@@ -74,7 +74,6 @@
                            :rules="[rules.required, rules.phone]"
                            :error-messages="errorMessageForm.phone"
                            @change="errorMessageForm.phone = ''"
-                           @keyup.tab.prevent="$refs.email.$refs.input.click()"
                         ></v-text-field
                         ><v-text-field
                            ref="email"
