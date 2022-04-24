@@ -107,8 +107,38 @@ export default {
          }
       },
       save() {
+         // var myHeaders = new Headers();
+         // myHeaders.append("Content-Type", "application/json");
+         // myHeaders.append(
+         //    "Cookie",
+         //    "JSESSIONID=623D958BF9C7D2098088D86286BDE263"
+         // );
+
+         // var raw = JSON.stringify({
+         //    email: "T@T",
+         //    phone: "0987654321",
+         //    gender: 1,
+         //    intro: "qqqq",
+         // });
+
+         // var requestOptions = {
+         //    method: "POST",
+         //    headers: myHeaders,
+         //    body: raw,
+         //    redirect: "follow",
+         //    mode: "no-cors",
+         // };
+
+         // fetch("http://34.215.246.135:8080/users/change_info", requestOptions)
+         //    .then((response) => response.text())
+         //    .then((result) => console.log(result))
+         //    .catch((error) => console.log("error", error));
+         let form_data = new FormData();
+         for (let key in this.form) {
+            form_data.append(key, this.form[key]);
+         }
          http
-            .post("users/change_info", this.form)
+            .post("users/change_info", form_data)
             .then(({ data }) => {
                console.log(data);
                if (data.state == 2000) {
